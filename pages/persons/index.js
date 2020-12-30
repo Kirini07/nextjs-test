@@ -9,6 +9,7 @@ const Persons = () => {
     ))
     return (
         <MainLayout headerTitle={'Person list'}>
+            <h2>These links are used pre-rendering «getStaticPropsп»</h2>
             <ul>
                 {personList()}
             </ul>

@@ -11,6 +11,7 @@ const Locations = () => {
         </li>))
     return (
         <MainLayout headerTitle={'Movies list'}>
+            <h2>These links are used pre-rendering «getServerSideProps»</h2>
             <ul>
                 {moviesList()}
             </ul>
