@@ -16,12 +16,4 @@ const Persons = () => {
     );
 };
 
-export async function getStaticPaths() {
-    const personArray = getUsers();
-    return {
-        paths: personArray.map(({id}) => ({params: {personId: id}}) ),
-        fallback: false
-    };
-}
-
 export default Persons

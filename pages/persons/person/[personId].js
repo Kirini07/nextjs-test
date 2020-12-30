@@ -1,8 +1,8 @@
 import Link from "next/link";
-import {getUserById} from "../../../db/users";
+import {getUserById, getUsers} from "../../../db/users";
 import {MainLayout} from "../../../layouts/MainLayout";
-import {getMoviesById} from "../../../db/movie";
-function PersonDetails ({firstName, lastName, email, gender, ipAddress, dateOfBirth}) {
+
+function PersonDetails({firstName, lastName, email, gender, ipAddress, dateOfBirth}) {
 
     return (
         <MainLayout headerTitle={'Person details'}>
@@ -17,7 +17,15 @@ function PersonDetails ({firstName, lastName, email, gender, ipAddress, dateOfBi
     );
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticPaths() {
+    const personArray = getUsers();
+    return {
+        paths: personArray.map(({id}) => ({params: {personId: id.toString()}})),
+        fallback: false
+    };
+}
+
+export async function getStaticProps({params}) {
     const {
               firstName,
               lastName,
