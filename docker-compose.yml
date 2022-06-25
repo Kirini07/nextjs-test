@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+    next-app:
+        image: serhiihavryliuk/next-app
+        command: npm run start
+        env_file:
+            - .env
+        ports:
+            - "80:3000"
+        container_name: next-app
