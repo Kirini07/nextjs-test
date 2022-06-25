@@ -5,7 +5,7 @@ import {MainLayout} from "../layouts/MainLayout";
   return (
      <>
          <MainLayout>
-             Hey React developer i think you got wrong the door...
+             <p className='greetings'>Hey React developer i think you got wrong the door...</p>
          </MainLayout>
      </>
   )
