@@ -15,8 +15,13 @@ a {
 li {
   list-style: none;
 }
+.header-text-1{
+  font-size: 50px;
+  color: $lighter-purple;
+  text-align: center;
+}
 .greetings{
   font-size: 30px;
-  color: purple;
+  color: $lighter-purple;
   text-align: center;
 }
